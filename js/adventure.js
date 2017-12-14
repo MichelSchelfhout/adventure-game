@@ -9,7 +9,7 @@ var tekstinv = document.getElementById('tekstinv');
 var keyobject = document.getElementById('keyobject');
 var wolf = document.getElementById('wolf')
 var verhaal = document.getElementById('verhaal')
-
+var zwaard = document.getElementById('sword')
 var song1 = new Audio('./Theme.mp3');
 song1.play();
 
@@ -63,7 +63,8 @@ function level3(){
 
 function level4(){
 
-			
+			verhaal.innerHTML = 'You are closely listening to what the voice is telling you. It’s telling you to keep following this path. Then you notice it’s saying something else:  Save me, save us, save yourself! You are somewhat freaking out. What the hell is going on?! Where am I, what is going on? You start picking up your pace, almost running, until you notice, ahead of you, there is a closed gate with a giant lock to keep it closed that way.';
+
 			document.body.style.backgroundImage = 'url("./grfx/img/background4.jpg")';
 			key.style.display = 'inline';
 			knop.innerHTML = 'Attempt to open the lock';
@@ -102,10 +103,13 @@ function level4(){
 
 function level5(){
 
+			verhaal.innerHTML = 'You walk through the gate. Before you stands a magical creature that starts to speak to you. “Human, the tree behind me is the Tree of Eden. It is ill, due to the darkness that spreads across the country. It creeps up every minute. Defeat the dark dragon and the darkness shall perish. I will grant you your freedom if you complete this quest.”'
 			document.body.style.backgroundImage = 'url("./grfx/img/background5.jpg")';
 			knop.innerHTML = 'Accept the quest the creature gave you';
 			knop.style.marginLeft = '-500px';
 			knop.style.height = 'auto';
+			knop.onclick = accept;
+
 			
 
 			knop3.style.display = 'inline';
@@ -151,6 +155,11 @@ function warning(){
 		    alert("It appears you need a key to open the lock");
 }
 
+function warning2(){
+
+		    alert("Did you take the sword?");
+}
+
 function plaatjewolf(){
 
 
@@ -190,6 +199,32 @@ function again(){
 	
 
 	knop.onclick = level3;
+}
+
+function accept(){
+
+	verhaal.innerHTML = 'Very well, I will set you on your way. Take this magical sword, it will imbue itself with a bright light when you are close to the dragon';
+	knop.innerHTML = 'Teleport';
+	knop.style.marginLeft = '300px';
+	knop3.style.display = 'none';
+	sword.style.display = 'inline';
+
+	  sword.onclick = function(){
+
+			sword.style.display = 'none';
+			swordobject.style.display = 'inline';
+			}
+
+	knop.onclick = check;
+}
+
+function check(){
+
+	if (swordobject.style.display = 'none') {
+
+		knop.onclick = warning2;
+	}
+	
 }
 
 

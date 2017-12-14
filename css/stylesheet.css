@@ -109,7 +109,7 @@ body{
 	height: 100px;
 	opacity: 0.5;
 	position: absolute;
-	top: 300px;
+	top: 600px;
 	left: 500px;
 
 	display: none;
@@ -153,6 +153,20 @@ body{
 	
 }
 
+#swordobject{
+
+	background-color: white;
+	border-right: solid black 5px;
+	width: 100px;
+	height: 100px;
+	display: none;	
+	position: relative;
+	left: 105px;
+	top: -103px;
+
+	
+}
+
 #verhaal{
 
 	position: absolute;
@@ -174,4 +188,15 @@ body{
 span{
 
 	font-style: italic;
+}
+
+#sword{
+
+	width: 150px;
+	height: auto;
+
+	position: absolute;
+	left: 875px;
+	top: 500px;
+	display: none;
 }
