@@ -7,10 +7,15 @@ var key = document.getElementById('key');
 var inventory = document.getElementById('inventory');
 var tekstinv = document.getElementById('tekstinv');
 var keyobject = document.getElementById('keyobject');
-var wolf = document.getElementById('wolf')
-var verhaal = document.getElementById('verhaal')
-var zwaard = document.getElementById('sword')
+var wolf = document.getElementById('wolf');
+var verhaal = document.getElementById('verhaal');
+var zwaard = document.getElementById('sword');
+var swordobject = document.getElementById('swordobject');
+var sword2 = document.getElementById('sword2');
+var swordeffect = document.getElementById('swordeffect');
+
 var song1 = new Audio('./Theme.mp3');
+
 song1.play();
 
 knop.onclick = function(){
@@ -121,6 +126,33 @@ function level5(){
 
 }
 
+function accept(){
+
+	verhaal.innerHTML = 'Very well, I will set you on your way. Take this magical sword, it will imbue itself with a bright light when you are close to the dragon';
+	knop.innerHTML = 'Teleport';
+	knop.style.marginLeft = '300px';
+	knop3.style.display = 'none';
+	zwaard.style.display = 'inline';
+	swordobject.style.display = 'none';
+
+	
+
+	zwaard.onclick = function(){
+
+		zwaard.style.display = 'none';
+		swordobject.style.display = 'inline' ;
+		knop.innerHTML = 'Actually teleport';
+		knop.onclick = level7;
+
+		}
+
+	if (knop.innerHTML = 'Teleport') {
+
+		knop.onclick = warning2;
+	}
+
+}
+
 function level6(){
 
 		    document.body.style.backgroundImage = 'url("./grfx/img/background6.jpg")';
@@ -131,16 +163,123 @@ function level6(){
 		    knop.onclick = plaatjewolf; 
 		    knop.onclick = level7;
 		    knop2.onclick = death;
-
-
-
 }
 
 function level7(){
 
+			verhaal.innerHTML = 'You get teleported somewhere in front of a big, forest looking island.';
+			knop.innerHTML = 'Start walking towards the island';
+		    document.body.style.backgroundImage = 'url("./grfx/img/background7.jpg")';
+
+		    knop.style.marginLeft = '-200px';
+
+		    knop.onclick = level8;
+}
+
+function level8(){
+
+		   verhaal.innerHTML = 'As you come closer to the island you notice a dark fog is setting in';
+		   knop.innerHTML = 'Hurry and hide in the forest';
+		   document.body.style.backgroundImage = 'url("./grfx/img/background7-2.jpg';
+
+		   knop.onclick = level9;
+}
+
+function level9(){
+
+		   verhaal.innerHTML = 'You got to the forest. But not even a minute after catching your breath. You can hear the roar of a mighty dragon. Looking up, you can see it flying over the island.'
+		   knop.innerHTML = 'You continue deeper in to the forest'; 
+		   document.body.style.backgroundImage = 'url("./grfx/img/background8.jpg")';
+
+		   knop.onclick = level10;
+}
+
+function level10(){
+
+		  document.body.style.backgroundImage = 'url("./grfx/img/background9.jpg")';
+		  verhaal.innerHTML = 'You have a feeling you are about as far in the forest as you need to be. You notice your sword is emitting a blue bright light as the creature before said. You look to your right and there you see a dark cave.'
+		  knop.innerHTML = 'Get on your way, in the opposite direction of the cave';
+		  knop.style.marginLeft = '-700px';
+		  knop3.innerHTML = 'Continue in to the cave?';
+		  knop3.style.display = 'inline';
+		  knop3.style.marginLeft = '0px';
+
+		  knop.onclick = level11;
+		  knop3.onclick = death2;
+
+}
+
+function level11(){
+
+		knop3.style.display = 'none';
+		document.body.style.backgroundImage = 'url("./grfx/img/background10.jpg")';
+		verhaal.innerHTMl = 'You get to a overgrown and dark spot in the forest. The sword is emitting an even more bright light and it seems like it is telling you to prepare yourself.';
+		knop.innerHTML = 'Prepare your sword'
+		knop.onclick = swordhand; 
+
+}
+
+
+function swordhand(){
+
+		verhaal.innerHTML = 'With the sword, tightly gripped into your hands. You feel confident in your ability to overpower the darkness.'
+	    sword2.style.display = 'inline';
+	    knop.innerHTML = 'Continue forward, step by step';
+	    knop.onclick = levelfinal;
+
+}
+
+function levelfinal(){
+
+		verhaal.innerHTML = 'Your surroundings change, trees are changing into rocks and the leaves on the floor make place for snow. You find yourself on top of a mountain with in front of you a mighty dragon.'
+	    document.body.style.backgroundImage = 'url("./grfx/img/background11.jpg")';
+	    knop.innerHTML = 'Brace';
+	    knop.onclick = scene; 
 
 
 }
+
+function scene(){
+
+		verhaal.innerHTML = 'The dragon roars and jumps up. You can see it opening his jaws and you know, fire is coming your way.';
+		knop.innerHTML = 'Hold up your sword and slice in to the air';
+		knop2.style.display = 'inline';
+		knop2.innerHTML = 'Dig yourself in the snow around you';
+
+		knop.onclick = victory; 
+		knop2.onclick = death3;
+}
+
+function victory(){
+
+
+		verhaal.innerHTML = 'Your sword lacerates through the air, launching a huge red projectile at the dragon, it destroys the fireball and the dragon with the biggest explosion you have ever seen.';
+		knop2.style.display = 'none';
+		knop.innerHTML = 'Continue'; 
+		sword2.style.marginLeft = '280px';
+		sword2.style.marginTop = '300px';
+		swordeffect.style.display = 'inline';
+
+		knop.onclick = victory2;
+}
+
+function victory2(){
+
+		document.body.style.backgroundImage = 'url("./grfx/img/victory.jpg")';
+		verhaal.innerHTML = 'Moments after you get teleported back to the tree and its creature. It congratulates you and gives you some words of wisdom. And as promised he is giving you your freedom';
+		sword2.style.display = 'none';
+		swordeffect.style.display = 'none';
+		knop.innerHTML = 'Go home, you might be just in time for dinner.';
+		knop.onclick = victoryscreen
+
+}
+
+function victoryscreen(){
+
+
+		
+}
+
 
 
 
@@ -179,6 +318,20 @@ function death(){
 	tekstinv.style.display = 'none';
 	inventory.style.display = 'none';
 	knop.onclick = again;
+}
+
+function death2(){
+
+	document.body.style.backgroundColor = 'black'
+	document.body.style.backgroundImage = 'url("./grfx/img/death.jpg")';
+	knop3.innerHTML = 'Idiot. Never go in to a dark cave.';
+	knop3.style.marginLeft = '-700px';
+	verhaal.style.display = 'none';
+	knop.style.display = 'none';
+	tekstinv.style.display = 'none';
+	inventory.style.display = 'none';
+	knop3.onclick = again;
+
 
 }
 
@@ -195,37 +348,12 @@ function again(){
 	kop.style.marginLeft = '0px';
 	kop.style.marginTop = '-275px';
 	kop.style.fontSize = '25px';
-	
-	
-
 	knop.onclick = level3;
 }
 
-function accept(){
 
-	verhaal.innerHTML = 'Very well, I will set you on your way. Take this magical sword, it will imbue itself with a bright light when you are close to the dragon';
-	knop.innerHTML = 'Teleport';
-	knop.style.marginLeft = '300px';
-	knop3.style.display = 'none';
-	sword.style.display = 'inline';
 
-	  sword.onclick = function(){
 
-			sword.style.display = 'none';
-			swordobject.style.display = 'inline';
-			}
-
-	knop.onclick = check;
-}
-
-function check(){
-
-	if (swordobject.style.display = 'none') {
-
-		knop.onclick = warning2;
-	}
-	
-}
 
 
 

@@ -162,7 +162,7 @@ body{
 	display: none;	
 	position: relative;
 	left: 105px;
-	top: -103px;
+	top: -104px;
 
 	
 }
@@ -198,5 +198,20 @@ span{
 	position: absolute;
 	left: 875px;
 	top: 500px;
+	display: none;
+}
+
+#sword2{
+
+	margin-left: 650px;
+	margin-top: 500px;	
+	display: none;
+
+}
+
+#swordeffect{
+
+	margin-left: 100px;
+	margin-top: 50px;
 	display: none;
 }
