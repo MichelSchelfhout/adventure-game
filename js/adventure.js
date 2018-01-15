@@ -116,7 +116,7 @@ function level5(){
 			knop.onclick = accept;
 
 			
-
+			knop3.onclick = death5;
 			knop3.style.display = 'inline';
 			knop3.style.width = '500px'; 
 			knop3.style.marginLeft = '200px';
@@ -167,13 +167,21 @@ function level6(){
 
 function level7(){
 
-			verhaal.innerHTML = 'You get teleported somewhere in front of a big, forest looking island.';
+			wolf.style.display = 'none';
+			knop.innerHTML = 'The wolf disappeared, continue?'
+			knop.onclick = level71;
+}
+
+function level71(){
+
+
+		    verhaal.innerHTML = 'You get teleported somewhere in front of a big, forest looking island.';
 			knop.innerHTML = 'Start walking towards the island';
 		    document.body.style.backgroundImage = 'url("./grfx/img/background7.jpg")';
 
 		    knop.style.marginLeft = '-200px';
-
-		    knop.onclick = level8;
+		    knop2.style.display = 'none';
+		    knop.onclick = level81;
 }
 
 function level8(){
@@ -185,6 +193,15 @@ function level8(){
 		   knop.onclick = level9;
 }
 
+function level81(){
+
+		   verhaal.innerHTML = 'As you come closer to the island you notice a dark fog is setting in';
+		   knop.innerHTML = 'Hurry and hide in the forest';
+		   document.body.style.backgroundImage = 'url("./grfx/img/background7-2.jpg';
+
+		   knop.onclick = level91;
+}
+
 function level9(){
 
 		   verhaal.innerHTML = 'You got to the forest. But not even a minute after catching your breath. You can hear the roar of a mighty dragon. Looking up, you can see it flying over the island.'
@@ -193,6 +210,31 @@ function level9(){
 
 		   knop.onclick = level10;
 }
+
+function level91(){
+
+		   verhaal.innerHTML = 'You got to the forest. But not even a minute after catching your breath. You can hear the roar of a mighty dragon. Looking up, you can see it flying over the island.'
+		   knop.innerHTML = 'You continue deeper in to the forest'; 
+		   document.body.style.backgroundImage = 'url("./grfx/img/background8.jpg")';
+
+		   knop.onclick = level101;
+}
+
+function level101(){
+
+		  document.body.style.backgroundImage = 'url("./grfx/img/background9.jpg")';
+		  verhaal.innerHTML = 'You have a feeling you are about as far in the forest as you need to be. You look to your right and there you see a dark cave.'
+		  knop.innerHTML = 'Get on your way, in the opposite direction of the cave';
+		  knop.style.marginLeft = '-700px';
+		  knop3.innerHTML = 'Continue in to the cave?';
+		  knop3.style.display = 'inline';
+		  knop3.style.marginLeft = '0px';
+
+		  knop.onclick = level111;
+		  knop3.onclick = death2;
+
+}
+
 
 function level10(){
 
@@ -208,6 +250,17 @@ function level10(){
 		  knop3.onclick = death2;
 
 }
+
+function level111(){
+
+		knop3.style.display = 'none';
+		document.body.style.backgroundImage = 'url("./grfx/img/background10.jpg")';
+		verhaal.innerHTMl = 'You get to a overgrown and dark spot in the forest. You still have no idea what the f*ck is going on';
+		knop.innerHTML = 'Continue to your likely death';
+		knop.onclick = levelfinal2; 
+
+}
+
 
 function level11(){
 
@@ -229,6 +282,14 @@ function swordhand(){
 
 }
 
+function levelfinal2(){
+
+		verhaal.innerHTML = 'Your surroundings change, trees are changing into rocks and the leaves on the floor make place for snow. You find yourself on top of a mountain with in front of you a mighty dragon.'
+	    document.body.style.backgroundImage = 'url("./grfx/img/background11.jpg")';
+	    knop.innerHTML = 'Start to cry';
+	    knop.onclick = scene2; 
+}
+
 function levelfinal(){
 
 		verhaal.innerHTML = 'Your surroundings change, trees are changing into rocks and the leaves on the floor make place for snow. You find yourself on top of a mountain with in front of you a mighty dragon.'
@@ -236,6 +297,18 @@ function levelfinal(){
 	    knop.innerHTML = 'Brace';
 	    knop.onclick = scene; 
 
+
+}
+
+function scene2(){
+
+		verhaal.innerHTML = 'The dragon roars and jumps up. You can see it opening his jaws and you know, fire is coming your way.';
+		knop.innerHTML = 'Ruuuun!';
+		knop2.style.display = 'inline';
+		knop2.innerHTML = 'Dig yourself in the snow around you';
+
+		knop.onclick = death4; 
+		knop2.onclick = death3;
 
 }
 
@@ -270,14 +343,16 @@ function victory2(){
 		sword2.style.display = 'none';
 		swordeffect.style.display = 'none';
 		knop.innerHTML = 'Go home, you might be just in time for dinner.';
-		knop.onclick = victoryscreen
+		knop.onclick = victoryscreen;
 
 }
 
 function victoryscreen(){
 
 
-		
+		document.body.style.backgroundImage = 'url("./grfx/img/victory2.jpg")';
+		knop.innerHTML = 'The end.';
+		knop.onclick = home;
 }
 
 
@@ -303,7 +378,7 @@ function plaatjewolf(){
 
 
 	wolf.style.display = 'none';
-	knop.innerHTML = 'The wolf disappeared, continue?'
+	
 }
 
 function death(){
@@ -313,11 +388,12 @@ function death(){
 	document.body.style.backgroundImage = 'url("./grfx/img/death.jpg")';
 	knop.innerHTML = 'The wolf made a leap and killed you. Start again?';
 	knop.style.marginLeft = '-700px';
+	verhaal.style.display = 'none';
 	wolf.style.display = 'none';
 	knop2.style.display = 'none';
 	tekstinv.style.display = 'none';
 	inventory.style.display = 'none';
-	knop.onclick = again;
+	knop.onclick = home;
 }
 
 function death2(){
@@ -330,28 +406,56 @@ function death2(){
 	knop.style.display = 'none';
 	tekstinv.style.display = 'none';
 	inventory.style.display = 'none';
-	knop3.onclick = again;
+	knop3.onclick = home;
 
 
 }
 
-function again(){
-	
-	deathsong.pause();
-	tekstinv.style.display = 'inline';
-	inventory.style.display = 'inline';
-	document.body.style.backgroundImage = 'url("./grfx/img/background2.jpg")';
-	knop.innerHTML = 'You continue to walk forward in to the mist';
-	knop.style.width = '500px'; 
-	knop.style.marginLeft = '-150px';
-	knop.style.marginTop = '300px';
-	kop.style.marginLeft = '0px';
-	kop.style.marginTop = '-275px';
-	kop.style.fontSize = '25px';
-	knop.onclick = level3;
+function death3(){
+
+	document.body.style.backgroundColor = 'black'
+	document.body.style.backgroundImage = 'url("./grfx/img/death.jpg")';
+	knop.innerHTML = 'Did you think you the snow would save you? Fool.';
+	knop.style.marginLeft = '-700px';
+	verhaal.style.display = 'none';
+	tekstinv.style.display = 'none';
+	inventory.style.display = 'none';
+	knop.onclick = home;
+	knop2.style.display = 'none'; 	
+  
 }
 
+function death4(){
 
+	document.body.style.backgroundColor = 'black'
+	document.body.style.backgroundImage = 'url("./grfx/img/death.jpg")';
+	knop.innerHTML = 'Did you think you could run away from a dragon? Fool.';
+	knop2.style.display = 'none';
+	knop.style.marginLeft = '-700px';
+	verhaal.style.display = 'none';
+	tekstinv.style.display = 'none';
+	inventory.style.display = 'none';
+	knop.onclick = home;
+}
+
+function death5(){
+
+	document.body.style.backgroundColor = 'black'
+	document.body.style.backgroundImage = 'url("./grfx/img/death.jpg")';
+	knop.innerHTML = 'Never throw a stick at a magical creature.';
+	knop2.style.display = 'none';
+	knop.style.marginLeft = '-700px';
+	knop3.style.display = 'none';
+	verhaal.style.display = 'none';
+	tekstinv.style.display = 'none';
+	inventory.style.display = 'none';
+	knop.onclick = home;
+}
+
+function home(){
+
+	location = location;
+}
 
 
 
