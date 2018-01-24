@@ -142,7 +142,7 @@ function accept(){
 		zwaard.style.display = 'none';
 		swordobject.style.display = 'inline' ;
 		knop.innerHTML = 'Actually teleport';
-		knop.onclick = level7;
+		knop.onclick = level8;
 
 		}
 
